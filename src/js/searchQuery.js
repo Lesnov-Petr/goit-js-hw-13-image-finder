@@ -1,19 +1,43 @@
 import fetchImage from './apiService.js';
 import refs from './refs.js';
+import markup from './markup.js';
+import { getInfo, myInfo } from './pnotify.js';
+import * as basicLightbox from 'basiclightbox';
 
-const { search, extand, input, listImg } = refs;
+const { search, expand, input, listImg } = refs;
 
 const getQuery = event => {
   event.preventDefault();
   listImg.innerHTML = '';
   fetchImage.page = 1;
-  fetchImage.quiry(input.value);
+  getfetch(input.value);
+  listImg.addEventListener('click', showGallery);
+  getInfo(myInfo(input.value));
+
+  expand.classList.remove('is-hidden');
 };
 
-const extandNewImg = event => {
+const getfetch = value => {
+  fetchImage.quiry(value).then(arrayImg => {
+    markup(arrayImg), window.scrollTo(0, document.documentElement.offsetHeight);
+  });
+};
+
+const expandNewImg = event => {
   event.preventDefault();
-  fetchImage.quiry(input.value);
+  getfetch(input.value);
+};
+
+const getQueryEnter = event => {
+  if (event.code === 'Enter') {
+    getQuery(event);
+  }
+};
+
+const showGallery = event => {
+  basicLightbox.create(`${event.target}`).show();
 };
 
 search.addEventListener('click', getQuery);
-extand.addEventListener('click', extandNewImg);
+input.addEventListener('keydown', getQueryEnter);
+expand.addEventListener('click', expandNewImg);

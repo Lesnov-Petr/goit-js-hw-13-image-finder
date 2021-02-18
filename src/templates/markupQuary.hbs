@@ -1,7 +1,15 @@
 {{#each this}}
 <li class="item">
-    <a href="{{pageURL}}" target="_blank">
-        <img class="item__img" src="{{previewURL}}" alt="{{tags}}">
-    </a>
+    <div><a href="{{largeImageURL}}" target="_blank">
+            <img class="item__img" src="{{webformatURL}}" alt="{{tags}}">
+        </a></div>
+    <div class="property">
+        <p class="text"><span class="material-icons">thumb_up</span><b>:</b>{{likes}}</p>
+        <p class="text"><span class="material-icons">visibility</span><b>:</b>{{views}}</p>
+        <p class="text"><span class="material-icons">comment</span><b>:</b>{{comments}}</p>
+        <p class="text"><span class="material-icons">cloud_download</span><b>:</b>{{downloads}}</p>
+
+    </div>
+
 </li>
 {{/each}}

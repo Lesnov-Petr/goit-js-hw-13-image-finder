@@ -1,5 +1,3 @@
-import markup from './markup.js';
-
 const fetchImage = {
   key: '20241631-8c2a23c9fab91569c058a3702',
   page: 1,
@@ -9,7 +7,6 @@ const fetchImage = {
     this.page += 1;
     return fetch(url)
       .then(res => res.json())
-      .then(arrayImg => markup(arrayImg))
       .catch(error => console.log(error));
   },
 };

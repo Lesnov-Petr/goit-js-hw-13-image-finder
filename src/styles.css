@@ -13,7 +13,39 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background-image: url(./images/bg-pattern.png);
-  padding-top: 50px;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 .container {
@@ -39,6 +71,17 @@ body {
   color: brown;
 }
 
+.input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.input:focus::-webkit-input-placeholder {
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .listImg {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +91,6 @@ body {
   margin: 0;
   padding: 0;
   padding-bottom: 20px;
-  scroll-behavior: smooth;
 }
 
 .item {
@@ -58,6 +100,8 @@ body {
   margin-bottom: 30px;
   object-fit: fill;
 
+  background-color: #c5d1f0;
+
   box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -65,12 +109,9 @@ body {
   margin-right: 0;
 }
 
-.item:nth-last-child(-n + 4) {
-  margin-bottom: 0;
-}
-
 .item__img {
   width: 100%;
+  height: 180px;
 }
 
 .btn {
@@ -81,4 +122,19 @@ body {
 
   font-size: larger;
   cursor: pointer;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.property {
+  padding: 10px;
+}
+
+.text {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  width: calc((100% - 10px) / 2);
 }

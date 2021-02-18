@@ -1,6 +1,6 @@
 const refs = {
   search: document.querySelector('.search'),
-  extand: document.querySelector('.expand'),
+  expand: document.querySelector('.expand'),
   input: document.querySelector('.input'),
   listImg: document.querySelector('.listImg'),
 };

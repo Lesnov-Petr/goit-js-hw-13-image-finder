@@ -8,10 +8,14 @@ const { search, expand, input, listImg } = refs;
 
 const getQuery = event => {
   event.preventDefault();
+
   listImg.innerHTML = '';
   fetchImage.page = 1;
+
   getfetch(input.value);
+
   listImg.addEventListener('click', showGallery);
+
   getInfo(myInfo(input.value));
 
   expand.classList.remove('is-hidden');

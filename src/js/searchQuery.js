@@ -9,6 +9,7 @@ const { search, expand, anchor, input, listImg } = refs;
 const getQuery = event => {
   event.preventDefault();
 
+  anchor.classList.add('is-hidden');
   listImg.innerHTML = '';
   fetchImage.page = 1;
 
